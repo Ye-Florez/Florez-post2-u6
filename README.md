@@ -26,12 +26,12 @@ Programa en NASM (formato `.COM`) que demuestra cuatro modos de direccionamiento
 
 ## Tabla Resumen — 4 Modos de Direccionamiento
 
-| # | Modo                       | Fórmula Dirección Efectiva                    | Instrucción NASM usada           | Valor observado en DEBUG                   |
-|---|----------------------------|-------------------------------------------- --|----------------------------------|--------------------------------------------|
-| 1 | **Inmediato**              | No aplica — el dato está dentro del opcode    | `MOV ax, 100`                    | AX = 0064h (100 decimal)                   |
-| 2 | **Directo**                | EA = offset del símbolo (fijo en compilación) | `MOV ax, [var_x]`                | AX = FFFFh → luego 0000h tras escritura    |
-| 3 | **Indirecto por registro** | EA = contenido del registro (SI)              | `MOV si, nota1` / `MOV ax, [si]` | SI = 010Ch → AX = 0055h (85 decimal)       |
-| 4 | **Indexado**               | EA = BX + SI (base + índice)                  | `ADD ax, [bx + si]`              | AX = 0096h (150 decimal) al finalizar bucle|
+| # | Modo | Fórmula Dirección Efectiva | Instrucción NASM usada | Valor observado en DEBUG |
+|---|------|----------------------------|------------------------|--------------------------|
+| 1 | **Inmediato** | No aplica — el dato está dentro del opcode | `MOV ax, 100` | AX = 0064h (100 decimal) |
+| 2 | **Directo** | EA = offset del símbolo (fijo en compilación) | `MOV ax, [var_x]` | AX = FFFFh → luego 0000h tras escritura |
+| 3 | **Indirecto por registro** | EA = contenido del registro (SI) | `MOV si, nota1` / `MOV ax, [si]` | SI = 010Ch → AX = 0055h (85 decimal) |
+| 4 | **Indexado** | EA = BX + SI (base + índice) | `ADD ax, [bx + si]` | AX = 0096h (150 decimal) al finalizar bucle |
 
 ---
 
